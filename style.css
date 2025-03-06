@@ -55,8 +55,10 @@ header a{
     text-shadow: 0 5px 10px #0004;
 }
 .carousel .list .item .author{
-    font-weight: bold;
+    font-weight: 700;
     letter-spacing: 10px;
+    font-size: 16px;
+    color: rgb(15, 238, 230);
 }
 .carousel .list .item .title,
 .carousel .list .item .topic{

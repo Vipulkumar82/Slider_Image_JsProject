@@ -12,11 +12,6 @@ prev.onclick = function(){
     showSlider('prev');
 }
 
-// let runAutoRun;
-// runAutoRun = setInterval( () => {
-//     next.click();
-// },5000);
-
 let runTimeOut;
 function showSlider(type){
     let itemSlider = document.querySelectorAll('.carousel .list .item')
@@ -26,7 +21,18 @@ function showSlider(type){
         listItem.appendChild(itemSlider[0]);
         thumbnail.appendChild(itemThumbnail[0]);
         carousel.classList.add('next');
+    }else{
+        let positionLastItem = itemSlider.length - 1;
+        listItem.prepend(itemSlider[positionLastItem]);
+        thumbnail.prepend(itemThumbnail[positionLastItem]);
+        carousel.classList.add('prev');
     }
+
+    clearTimeout(runTimeOut);
+    runTimeOut = setTimeout( () => {
+        carousel.classList.remove('next');
+        carousel.classList.remove('prev');
+    },2000);
 
 }
 
